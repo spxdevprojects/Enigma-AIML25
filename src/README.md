@@ -278,3 +278,27 @@ From here, you could containerize or wire a FastAPI server—but that’s outsid
 ---
 
 Happy hacking! If you’re unsure where to start, open an issue and tag it with `question`.
+
+---
+
+## Automative OSINT Tool
+
+A passive OSINT utility is available at `src/automative_osint.py`.
+
+### Features
+- Detects indicator type automatically (`domain`, `email`, `ip`, `username`).
+- Collects DNS/TLS/certificate-transparency information for domains.
+- Enriches emails by analyzing their domain.
+- Performs reverse-DNS and geo/ASN lookup for IP addresses.
+- Checks common social platforms for username presence.
+- Produces a JSON report for further analysis/automation.
+
+### Usage
+```bash
+python src/automative_osint.py example.com 8.8.8.8 analyst_user --output report.json
+```
+
+### Notes
+- This script is designed for passive recon and defensive investigation workflows.
+- Some sources may rate limit requests.
+- Always ensure you have legal authorization for investigations.
